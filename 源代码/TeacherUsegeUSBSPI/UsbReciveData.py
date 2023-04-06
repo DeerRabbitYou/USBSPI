@@ -254,16 +254,16 @@ class UsbRecive():
                     result[2].append(datas[start] / 10)  # 电路板电压
                     start += 1
                     DrP = datas[start + 2] * 256 * 256 + datas[start + 1] * 256 + datas[start]
-                    result[3].append(self.Transfrom24BtoValue_S(DrP))  # 钻压
+                    result[3].append(self.Transfrom24BtoValue(DrP))  # 钻压
                     start += 3
                     Torque = datas[start + 2] * 256 * 256 + datas[start + 1] * 256 + datas[start]
-                    result[4].append(self.Transfrom24BtoValue_S(Torque))  # 扭矩
+                    result[4].append(self.Transfrom24BtoValue(Torque))  # 扭矩
                     start += 3
                     P = datas[start + 2] * 256 * 256 + datas[start + 1] * 256 + datas[start]
-                    result[5].append(self.Transfrom24BtoValue_S(P))  # 压强
+                    result[5].append(self.Transfrom24BtoValue(P))  # 压强
                     start += 3
                     Tem = datas[start + 2] * 256 * 256 + datas[start + 1] * 256 + datas[start]
-                    result[6].append(self.Transfrom24BtoValue_S(Tem))  # 温度
+                    result[6].append(self.Transfrom24BtoValue(Tem))  # 温度
                     start += 3
                     AX = datas[start + 2] * 256 * 256 + datas[start + 1] * 256 + datas[start]
                     result[7].append(self.Transfrom24BtoValue(AX))  # 加速度X
@@ -275,7 +275,7 @@ class UsbRecive():
                     result[9].append(self.Transfrom24BtoValue(AZ))  # 加速度Z
                     start += 3
                     DrS = datas[start + 2] * 256 * 256 + datas[start + 1] * 256 + datas[start]
-                    result[10].append(self.Transfrom24BtoValue_S(DrS))  # 钻速
+                    result[10].append(self.Transfrom24BtoValue(DrS))  # 钻速
                     i+=29
             else:
                 i+=1
