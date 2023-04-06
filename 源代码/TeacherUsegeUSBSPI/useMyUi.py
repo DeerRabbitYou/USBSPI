@@ -506,6 +506,11 @@ class UI(QMainWindow,Ui_MainWindow):
             logger.error("配置导出结束地址错误")
             self.ExportEndAddr = 128
             return
+        elif int(self.ExportEndAddr,16)==0:
+            QMessageBox.warning(self, "警告", "地址输入不能为0，请重新设置导出结束地址！", QMessageBox.Yes)
+            logger.error("配置导出结束地址错误")
+            self.ExportEndAddr = 128
+            return
         self.ExportEndAddr=int(self.ExportEndAddr,16)
         logger.info("点击导出按钮")
         # 去使能按钮
